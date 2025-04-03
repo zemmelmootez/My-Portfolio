@@ -9,8 +9,12 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "predeploy": "yarn build",
-    "deploy": "gh-pages -d dist"
+    "predeploy": "yarn build && echo > dist/.nojekyll",
+    "deploy": "gh-pages -d dist --dotfiles"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zemmelMootez/my-portfolio.git"
   },
   "dependencies": {
     "@react-three/drei": "^10.0.5",
@@ -28,6 +32,7 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.21.0",
+    "@types/node": "^22.14.0",
     "@types/react": "^19.0.10",
     "@types/react-dom": "^19.0.4",
     "@vitejs/plugin-react": "^4.3.4",

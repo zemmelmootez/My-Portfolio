@@ -60,11 +60,12 @@ const Hero = () => {
 
       <div className="container mx-auto px-4 py-20 md:py-32 relative z-10">
         <div className="flex flex-col md:flex-row items-center justify-between gap-10">
-          <div className="md:w-1/2">
+          <div className="w-full md:w-1/2">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
+              className="text-center md:text-left"
             >
               <h2
                 className={`text-xl md:text-2xl font-medium mb-4 ${
@@ -150,46 +151,11 @@ const Hero = () => {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="md:w-1/2 flex items-center justify-center relative"
+            className="hidden md:flex md:w-1/2 items-center justify-center relative"
           >
             <div className="w-full h-[600px]">
               <div className="w-full h-full">
                 <Hero3DModel />
-              </div>
-
-              {/* 3D Experience Button for Mobile */}
-              <div className="md:hidden absolute bottom-4 left-0 right-0 flex justify-center">
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  onClick={() => {
-                    // You can add fullscreen functionality here if needed
-                    document
-                      .querySelector(".hero-3d-container")
-                      ?.requestFullscreen();
-                  }}
-                  className={`px-4 py-2 rounded-md font-medium ${
-                    isDark
-                      ? "bg-primary text-gray-900 hover:bg-opacity-90"
-                      : "bg-primary-light text-white hover:bg-opacity-90"
-                  } transition-all shadow-lg flex items-center gap-2`}
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth={1.5}
-                    stroke="currentColor"
-                    className="w-5 h-5"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M2.25 7.125C2.25 6.504 2.754 6 3.375 6h6c.621 0 1.125.504 1.125 1.125v3.75c0 .621-.504 1.125-1.125 1.125h-6a1.125 1.125 0 0 1-1.125-1.125v-3.75ZM14.25 8.625c0-.621.504-1.125 1.125-1.125h5.25c.621 0 1.125.504 1.125 1.125v8.25c0 .621-.504 1.125-1.125 1.125h-5.25a1.125 1.125 0 0 1-1.125-1.125v-8.25ZM3.75 16.125c0-.621.504-1.125 1.125-1.125h5.25c.621 0 1.125.504 1.125 1.125v2.25c0 .621-.504 1.125-1.125 1.125h-5.25a1.125 1.125 0 0 1-1.125-1.125v-2.25Z"
-                    />
-                  </svg>
-                  View in 3D
-                </motion.button>
               </div>
             </div>
           </motion.div>
